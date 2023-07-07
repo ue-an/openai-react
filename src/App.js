@@ -2,7 +2,9 @@ import ChatGPT from './components/ChatGPT';
 
 function App() {
   return (
-    <ChatGPT />
+    <div className='bg-primary'>
+      <ChatGPT />
+    </div>
   );
 }
 

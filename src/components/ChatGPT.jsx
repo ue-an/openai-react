@@ -18,22 +18,29 @@ const ChatGPT = () => {
  };
 
  return (
-  <div>
-   <div>ChatGPT</div>
-   <form action="" onSubmit={handleSubmit}>
-    <div>
-     <label htmlFor="">Ask Questions</label>
-     <input
-      type="text"
-      placeholder="Enter text"
-      value={prompt}
-      onChange={handlePrompt}
-      />
-    </div>
-   </form>
+  <div className="text-gray-600 bg-primary flex flex-col items-center">
+   <div className=" flex flex-col items-center w-full max-w-[1080px]">
+   <div className=" pt-6 font-bold text-3xl flex justify-center">ChatGPT Clone</div>
+   <div className=" px-12 w-full h-[calc(100vh-20vh)]">
+     {response ? response : "Ask me anything..."}
+   </div>
 
-   <div>
-    {prompt ? response ? response : "Ask me anything..." : "Ask me anything..."}
+   <div className=" rounded-tl-lg rounded-tr-lg bg-slate-400 py-6 px-6 w-full sticky inset-x-0 bottom-0">
+    <div className=" w-full">
+      <form className=" gap-6 flex w-full" action="" onSubmit={handleSubmit}>
+        <input
+         className=" rounded-lg px-3 w-full"
+         type="text"
+         placeholder="Enter question"
+         value={prompt}
+         onChange={handlePrompt}
+         />
+         <button className=" rounded-md py-1 px-3 text-white bg-slate-600" type="submit">
+          Go
+         </button>
+      </form>
+     </div>
+   </div>
    </div>
   </div>
  );
